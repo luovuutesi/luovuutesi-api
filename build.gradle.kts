@@ -1,7 +1,9 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
+    java
     kotlin("jvm") version "1.6.21"
+    `maven-publish`
 }
 
 group = "org.luovuutesi"
@@ -21,4 +23,16 @@ tasks.test {
 
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "org.luovuutesi"
+            artifactId = "luovuutesi-api"
+            version = "0.0.1"
+
+            from(components["java"])
+        }
+    }
 }
