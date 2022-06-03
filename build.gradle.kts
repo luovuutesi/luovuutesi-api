@@ -28,9 +28,9 @@ tasks.withType<KotlinCompile> {
 publishing {
     publications {
         create<MavenPublication>("maven") {
-            groupId = "org.luovuutesi"
-            artifactId = "luovuutesi-api"
-            version = "0.0.1"
+            groupId = project.group as String
+            artifactId = rootProject.name
+            version = project.version as String
 
             from(components["java"])
         }

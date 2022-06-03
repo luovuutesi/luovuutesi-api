@@ -3,7 +3,7 @@ package org.luovuutesi.api
 interface Module {
     val moduleId: String
 
-    fun start()
+    fun start(context: Context)
 
-    fun stop()
+    fun stop(context: Context)
 }
