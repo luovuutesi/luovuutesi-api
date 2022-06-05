@@ -1,7 +1,7 @@
 package org.luovuutesi.api
 
 interface System {
-    val requiredComponents: Collection<Component>
+    val requiredComponents: Collection<Class<*>>
         get() = setOf()
 
     fun beforeStart(context: Context, entities: Collection<Entity>) {}
