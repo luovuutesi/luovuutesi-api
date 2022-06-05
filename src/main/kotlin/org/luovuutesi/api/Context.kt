@@ -4,5 +4,5 @@ interface Context {
     fun createEntity(): Entity
     fun destroyEntity(entity: Entity)
 
-    fun register(system: System)
+    fun register(system: System, time: SystemTime)
 }
